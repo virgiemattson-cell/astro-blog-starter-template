@@ -2,13 +2,21 @@
 import { WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from '../consts';
 const { lang = "en" } = Astro.props;
 const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
+const headingHtml = lang === "ur" 
+  ? 'تیار ہیں؟<br><span class="glow">نظر انداز کرنا ناممکن</span> بننے کے لیے؟'
+  : 'Ready to Be<br><span class="glow">Impossible to Ignore?</span>';
+
+const descText = lang === "ur"
+  ? "مفت 30 منٹ کا مشورہ حاصل کریں — بغیر کسی ذمہ داری کے۔ ہم آپ کو دکھائیں گے کہ آپ کہاں گاہک کھو رہے ہیں اور اسے کیسے ٹھیک کریں۔"
+  : "Get a free 30-minute audit — no strings attached. We'll show you exactly where you're losing clients and how to fix it fast.";
 ---
 
 <section class="cta-section" id="contact">
   <div class="container">
     <div class="tag">{lang === "ur" ? "محدود نشستیں" : "Limited Spots Available"}</div>
-    <h2>{lang === "ur" ? "تیار ہیں؟<br><span class=\"glow\">نظر انداز کرنا ناممکن</span> بننے کے لیے؟" : "Ready to Be<br><span class=\"glow\">Impossible to Ignore?</span>"}</h2>
-    <p>{lang === "ur" ? "مفت 30 منٹ کا مشورہ حاصل کریں — بغیر کسی ذمہ داری کے۔ ہم آپ کو دکھائیں گے کہ آپ کہاں گاہک کھو رہے ہیں اور اسے کیسے ٹھیک کریں۔" : "Get a free 30-minute audit — no strings attached. We'll show you exactly where you're losing clients and how to fix it fast."}</p>
+    <h2 set:html={headingHtml}></h2>
+    <p>{descText}</p>
     
     <div class="contact-cards">
       <a href={waUrl} target="_blank" rel="noopener" class="contact-wa-card">
