@@ -20,13 +20,17 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--night);
   color: var(--white);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 { font-family: 'Syne', sans-serif; line-height: 1.15; }
+h1, h2, h3, h4 { 
+  font-weight: 700; 
+  line-height: 1.15; 
+  letter-spacing: -0.02em;
+}
 
 .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 .section    { padding: 96px 0; }
@@ -58,8 +62,8 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; line-height: 1.15; }
 .section-header { text-align: center; margin-bottom: 64px; }
 .section-header h2 {
   font-size: clamp(32px, 4vw, 48px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
 }
 .section-header p { font-size: 17px; color: var(--muted); max-width: 520px; margin: 0 auto; }
@@ -79,14 +83,13 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; line-height: 1.15; }
   padding: 14px 28px;
   border-radius: var(--radius);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
 }
 .btn-primary:hover {
   background: #d97706;
@@ -101,14 +104,13 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; line-height: 1.15; }
   padding: 14px 28px;
   border-radius: var(--radius);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
 }
 .btn-secondary:hover { background: var(--card-bg); border-color: rgba(255,255,255,0.2); }
 
@@ -123,7 +125,7 @@ h1, h2, h3, h4 { font-family: 'Syne', sans-serif; line-height: 1.15; }
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s;
-  font-family: 'Inter', sans-serif;
+  font-family: inherit;
 }
 .btn-nav:hover { background: #1d4ed8; transform: translateY(-1px); }
 

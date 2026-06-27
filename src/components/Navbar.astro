@@ -1,5 +1,7 @@
 ---
 const { lang = "en" } = Astro.props;
+const langHref = lang === "ur" ? "/" : "/urdu";
+const langLabel = lang === "ur" ? "English" : "اردو";
 ---
 
 <nav class="nav" id="navbar">
@@ -11,7 +13,7 @@ const { lang = "en" } = Astro.props;
         <li><a href="/services">{lang === "ur" ? "خدمات" : "Services"}</a></li>
         <li><a href="/about">{lang === "ur" ? "ہمارے بارے میں" : "About"}</a></li>
         <li><a href="/contact">{lang === "ur" ? "رابطہ" : "Contact"}</a></li>
-        <li><a href="/urdu" class="lang-switch">{lang === "ur" ? "English" : "اردو"}</a></li>
+        <li><a href={langHref} class="lang-switch">{langLabel}</a></li>
       </ul>
       <a href="/contact" class="btn-nav">{lang === "ur" ? "مفت مشورہ →" : "Free Audit →"}</a>
     </div>
@@ -38,7 +40,6 @@ const { lang = "en" } = Astro.props;
     justify-content: space-between;
   }
   .logo {
-    font-family: 'Syne', sans-serif;
     font-size: 22px;
     font-weight: 800;
     text-decoration: none;

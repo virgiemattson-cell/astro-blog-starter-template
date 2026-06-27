@@ -19,20 +19,19 @@ const { title, description, lang = "en" } = Astro.props;
     <meta name="description" content={description} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     {lang === "ur" && (
       <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet" />
     )}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     {lang === "ur" && (
       <style>
-        body { font-family: 'Noto Nastaliq Urdu', 'Inter', sans-serif; font-size: 18px; line-height: 2; }
-        h1, h2, h3, h4 { font-family: 'Noto Nastaliq Urdu', 'Syne', sans-serif; letter-spacing: normal; }
+        body { font-family: 'Noto Nastaliq Urdu', 'Inter', sans-serif !important; font-size: 18px; line-height: 2; }
+        h1, h2, h3, h4 { font-family: 'Noto Nastaliq Urdu', 'Inter', sans-serif !important; letter-spacing: normal; }
         .tag { font-size: 13px; }
-        .service-card h3, .step-card h3, .point-text h4, .reviewer-info h4 { font-size: 1.1em; }
         .stat-item p { font-size: 14px; }
-        .btn-nav, .btn-primary, .btn-secondary { font-size: 16px; }
         .hero h1 { line-height: 1.4; }
+        .nav-links a { font-size: 15px; }
       </style>
     )}
   </head>
