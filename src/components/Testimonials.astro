@@ -1,0 +1,85 @@
+---
+const { lang = "en" } = Astro.props;
+
+const reviews = [
+  {
+    stars: "★★★★★",
+    text: lang === "ur" ? '"اسکائی وزیبل نے صرف 3 مہینوں میں ہماری ویب سائٹ ٹریفک تین گنا کر دی۔ بہترین سرمایہ کاری۔"' : '"SkyVisible tripled our website traffic in just 3 months. Best investment we\'ve made for our clinic."',
+    initials: "AK",
+    name: lang === "ur" ? "احمد خان" : "Ahmed Khan",
+    title: lang === "ur" ? "خان ڈینٹل کلینک، کراچی" : "Khan Dental Clinic, Karachi"
+  },
+  {
+    stars: "★★★★★",
+    text: lang === "ur" ? '"صفر سوشل میڈیا سے 8,000 فالوورز اور روزانہ کلائنٹ انکوائریز۔ ٹیم واقعی ہمارے برانڈ کو سمجھتی ہے۔"' : '"We went from zero social media to 8,000 followers and daily client inquiries. The team truly understands our brand."',
+    initials: "SR",
+    name: lang === "ur" ? "سارہ رضا" : "Sara Raza",
+    title: lang === "ur" ? "دی انٹیریئر کمپنی، لاہور" : "The Interior Co., Lahore"
+  },
+  {
+    stars: "★★★★★",
+    text: lang === "ur" ? '"ہماری نئی ویب سائٹ 5 گنا بہتر کنورٹ کرتی ہے اور ہم کلیدی الفاظ میں نمبر 1 ہیں۔ ریونیو 240% بڑھ گیا۔"' : '"Our new website converts 5x better and we\'re ranking #1 for our main keywords. Revenue is up 240%."',
+    initials: "MF",
+    name: lang === "ur" ? "محمد فرحان" : "Muhammad Farhan",
+    title: lang === "ur" ? "فاسٹ فکس آٹو، اسلام آباد" : "FastFix Auto, Islamabad"
+  }
+];
+---
+
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="tag">{lang === "ur" ? "کلائنٹ کے نتائج" : "Client Results"}</div>
+      <h2>{lang === "ur" ? "حقیقی کاروبار۔ حقیقی ترقی۔" : "Real Businesses. Real Growth."}</h2>
+      <p>{lang === "ur" ? "ہمارا لفظ نہ مانیں — یہ دیکھیں کہ ہمارے کلائنٹ کیا کہتے ہیں۔" : "Don't take our word for it — here's what our clients say."}</p>
+    </div>
+    <div class="testimonials-grid">
+      {reviews.map(r => (
+        <div class="testimonial-card fade-in">
+          <div class="stars-rating">{r.stars}</div>
+          <p>{r.text}</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">{r.initials}</div>
+            <div class="reviewer-info">
+              <h4>{r.name}</h4>
+              <p>{r.title}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .testimonial-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    transition: transform 0.3s;
+  }
+  .testimonial-card:hover { transform: translateY(-4px); }
+  .stars-rating { color: var(--gold); font-size: 14px; margin-bottom: 16px; letter-spacing: 2px; }
+  .testimonial-card > p {
+    font-size: 14px;
+    color: #CBD5E1;
+    line-height: 1.75;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+  .reviewer { display: flex; align-items: center; gap: 12px; }
+  .reviewer-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--sky), var(--dawn));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px; color: #fff; flex-shrink: 0;
+  }
+  .reviewer-info h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+  .reviewer-info p  { font-size: 12px; color: var(--muted); font-style: normal; }
+</style>

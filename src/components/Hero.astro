@@ -1,0 +1,130 @@
+---
+const { lang = "en" } = Astro.props;
+
+const content = lang === "ur" ? {
+  tag: "پاکستان کی گروتھ ایجنسی",
+  h1: "اپنے کاروبار کو<span class=\"glow\"> نظر انداز کرنا ناممکن</span> بنائیں",
+  p: "ہم مقامی کاروباروں کو سرچ انجن، سوشل میڈیا اور ویب پر غلبہ حاصل کرنے میں مدد دیتے ہیں — لوکل SEO، ویب ڈویلپمنٹ، سوشل میڈیا اور مواد کے ذریعے۔",
+  btn1: "🚀 مفت مشورہ حاصل کریں",
+  btn2: "خدمات دیکھیں →",
+  stats: [
+    { num: "150+", label: "کلائنٹس" },
+    { num: "3x", label: "اوسط ترقی" },
+    { num: "5★", label: "کلائنٹ ریٹنگ" },
+    { num: "48h", label: "آن بورڈنگ" }
+  ]
+} : {
+  tag: "Pakistan's Growth Agency",
+  h1: "Make Your Business<br><span class=\"glow\">Impossible to Ignore</span>",
+  p: "We help local businesses dominate search results, grow loyal communities, and turn clicks into paying clients — through Local SEO, web development, social media, and content that actually converts.",
+  btn1: "🚀 Get Free Audit",
+  btn2: "See Services →",
+  stats: [
+    { num: "150+", label: "Clients Served" },
+    { num: "3x", label: "Average Growth" },
+    { num: "5★", label: "Client Rating" },
+    { num: "48h", label: "Onboarding Time" }
+  ]
+};
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="stars" id="stars"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="tag" set:html={content.tag}></div>
+      <h1 set:html={content.h1}></h1>
+      <p set:html={content.p}></p>
+      <div class="hero-ctas">
+        <a href="/contact" class="btn-primary" set:html={content.btn1}></a>
+        <a href="/services" class="btn-secondary" set:html={content.btn2}></a>
+      </div>
+      <div class="hero-stats">
+        {content.stats.map(stat => (
+          <div class="stat-item">
+            <h3 set:html={stat.num}></h3>
+            <p set:html={stat.label}></p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%,  rgba(37,99,235,0.22) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 50%, rgba(129,140,248,0.10) 0%, transparent 60%);
+  }
+  .stars { position: absolute; inset: 0; pointer-events: none; }
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    animation: twinkle var(--d, 3s) ease-in-out infinite;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: var(--a, .5); transform: scale(1); }
+    50%       { opacity: 0.08; transform: scale(0.6); }
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 760px; }
+  .hero h1 {
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    line-height: 1.05;
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 540px;
+    margin-bottom: 40px;
+    line-height: 1.75;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 56px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .stat-item h3 {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+  .stat-item h3 span { color: var(--gold); }
+  .stat-item p { font-size: 13px; color: var(--muted); margin-top: 4px; }
+</style>
+
+<script>
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 90; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 2 + 0.8;
+    s.style.cssText = `
+      width:${size}px; height:${size}px;
+      top:${Math.random() * 100}%; left:${Math.random() * 100}%;
+      --d:${2 + Math.random() * 5}s;
+      --a:${0.2 + Math.random() * 0.8};
+    `;
+    starsEl.appendChild(s);
+  }
+</script>

@@ -1,0 +1,99 @@
+---
+const { lang = "en" } = Astro.props;
+
+const points = lang === "ur" ? [
+  { icon: "🎯", title: "نتائج پر مبنی نقطہ نظر", desc: "ہر فیصلہ حقیقی کاروباری نتائج — لیڈز، کالز اور سیلز سے منسلک ہوتا ہے۔" },
+  { icon: "🤝", title: "سرشار اکاؤنٹ مینیجر", desc: "ایک شخص جو آپ کے کاروبار کو اندر سے جانتا ہے — کوئی الجھن نہیں۔" },
+  { icon: "📊", title: "شفاف رپورٹنگ", desc: "ہفتہ وار اپ ڈیٹس تاکہ آپ کو ہمیشہ پتہ ہو کہ کیا کام کر رہا ہے۔" },
+  { icon: "⚡", title: "48 گھنٹوں میں آن بورڈنگ", desc: "ہم 48 گھنٹوں میں مہمات شروع کرتے ہیں، ہفتوں میں نہیں۔" }
+] : [
+  { icon: "🎯", title: "Results-First Approach", desc: "Every decision we make is tied to real business outcomes — leads, calls, and sales." },
+  { icon: "🤝", title: "Dedicated Account Manager", desc: "One person who knows your business inside out — no handoffs, no confusion." },
+  { icon: "📊", title: "Transparent Reporting", desc: "Weekly updates with plain-language reports so you always know what's working." },
+  { icon: "⚡", title: "Fast Onboarding — 48 Hours", desc: "We launch your campaigns in 48 hours, not weeks. Speed is a competitive advantage." }
+];
+
+const metrics = [
+  { label: lang === "ur" ? "ویب سائٹ ٹریفک" : "Website Traffic", value: "+280%", width: "85%" },
+  { label: lang === "ur" ? "گوگل رینکنگ" : "Google Rankings", value: lang === "ur" ? "ٹاپ 3" : "Top 3", width: "92%" },
+  { label: lang === "ur" ? "لیڈ جنریشن" : "Lead Generation", value: "+340%", width: "78%" },
+  { label: lang === "ur" ? "سوشل فالوورز" : "Social Followers", value: "+4.2K", width: "65%" },
+  { label: lang === "ur" ? "ریونیو گروتھ" : "Revenue Growth", value: "+190%", width: "72%" }
+];
+---
+
+<section class="section" id="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-text fade-in">
+        <div class="tag">{lang === "ur" ? "کیوں اسکائی وزیبل" : "Why SkyVisible"}</div>
+        <h2>{lang === "ur" ? "ہم صرف مہمات نہیں چلاتے۔ ہم مرئیت بناتے ہیں۔" : "We Don't Just Run Campaigns. We Build Visibility."}</h2>
+        <p>{lang === "ur" ? "زیادہ تر ایجنسیاں بیکار میٹرکس کی رپورٹیں بھیجتی ہیں۔ ہم ایک چیز پر توجہ دیتے ہیں: آپ کے دروازے سے زیادہ کلائنٹس گزریں۔" : "Most agencies send reports full of vanity metrics. We focus on one thing: more clients walking through your door."}</p>
+        <div class="why-points">
+          {points.map(p => (
+            <div class="why-point">
+              <div class="point-icon">{p.icon}</div>
+              <div class="point-text">
+                <h4>{p.title}</h4>
+                <p>{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="why-visual fade-in" id="metricsBox">
+        <p class="metrics-title">{lang === "ur" ? "📈 90 دنوں کے بعد اوسط کلائنٹ نتائج" : "📈 Average Client Results After 90 Days"}</p>
+        {metrics.map(m => (
+          <div class="metric-row">
+            <div class="metric-label"><span>{m.label}</span><span>{m.value}</span></div>
+            <div class="metric-bar"><div class="metric-fill" data-w={m.width}></div></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .why-text h2 { font-size: clamp(30px, 4vw, 46px); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 20px; }
+  .why-text > p { color: var(--muted); font-size: 16px; line-height: 1.8; margin-bottom: 36px; }
+  .why-points { display: flex; flex-direction: column; gap: 22px; }
+  .why-point { display: flex; gap: 16px; align-items: flex-start; }
+  .point-icon {
+    width: 42px; height: 42px; background: rgba(37,99,235,0.12); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px;
+  }
+  .point-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .point-text p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .why-visual {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 32px;
+  }
+  .metrics-title { font-size: 13px; color: var(--muted); margin-bottom: 24px; font-weight: 500; }
+  .metric-row { margin-bottom: 22px; }
+  .metric-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; }
+  .metric-label span:last-child { color: var(--gold); font-weight: 700; }
+  .metric-bar { height: 6px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden; }
+  .metric-fill {
+    height: 100%; border-radius: 3px;
+    background: linear-gradient(90deg, var(--sky), var(--dawn));
+    width: 0%; transition: width 1.4s ease;
+  }
+  .metric-fill.animated { width: var(--w, 0%); }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      if (entry.target.id === 'metricsBox') {
+        entry.target.querySelectorAll('.metric-fill').forEach(bar => {
+          bar.style.setProperty('--w', bar.dataset.w);
+          bar.classList.add('animated');
+        });
+      }
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+  observer.observe(document.getElementById('metricsBox'));
+</script>

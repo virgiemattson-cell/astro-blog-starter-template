@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+}
+
+const { title, description, lang = "en" } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang === "ur" ? "ur" : "en"} dir={lang === "ur" ? "rtl" : "ltr"}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    {lang === "ur" && (
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet" />
+    )}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {lang === "ur" && (
+      <style>
+        body { font-family: 'Noto Nastaliq Urdu', 'Inter', sans-serif; font-size: 18px; line-height: 2; }
+        h1, h2, h3, h4 { font-family: 'Noto Nastaliq Urdu', 'Syne', sans-serif; letter-spacing: normal; }
+        .tag { font-size: 13px; }
+        .service-card h3, .step-card h3, .point-text h4, .reviewer-info h4 { font-size: 1.1em; }
+        .stat-item p { font-size: 14px; }
+        .btn-nav, .btn-primary, .btn-secondary { font-size: 16px; }
+        .hero h1 { line-height: 1.4; }
+      </style>
+    )}
+  </head>
+  <body>
+    <slot name="navbar" />
+    <main>
+      <slot />
+    </main>
+    <slot name="footer" />
+    <slot name="whatsapp" />
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          if (entry.target.classList.contains('fade-in')) {
+            entry.target.classList.add('visible');
+          }
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+  </body>
+</html>

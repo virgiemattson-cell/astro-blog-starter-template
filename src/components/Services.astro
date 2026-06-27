@@ -1,0 +1,74 @@
+---
+const { lang = "en" } = Astro.props;
+
+const services = lang === "ur" ? [
+  { icon: "📍", title: "لوکل SEO", desc: "اپنے شہر میں گوگل کے پہلے صفحے پر قبضہ کریں۔ ہم آپ کی موجودگی کو بہتر بناتے ہیں تاکہ گاہک آپ کو حریف سے پہلے تلاش کریں۔", features: ["Google Business Profile", "مقامی کلیدی الفاظ", "Citation بلڈنگ", "ریویو سسٹم"] },
+  { icon: "💻", title: "ویب ڈیولپمنٹ", desc: "ایسی ویب سائٹس جو صرف اچھی نہیں لگتیں — وہ کلائنٹس کو خودکار طور پر تبدیل کرتی ہیں۔", features: ["کسٹم کاروباری ویب سائٹس", "ای کامرس اسٹورز", "لینڈنگ پیجز", "اسپیڈ آپٹیمائزیشن"] },
+  { icon: "📱", title: "سوشل میڈیا", desc: "ایک ایسا برانڈ بنائیں جس کی لوگ پیروی کریں، بھروسہ کریں، اور خریداری کریں۔", features: ["مواد کی حکمت عملی", "ڈیلی پوسٹنگ", "پید اشتہاری مہمات", "ماہانہ رپورٹنگ"] },
+  { icon: "✍️", title: "مواد کی مارکیٹنگ", desc: "وہ کہانیاں، مضامین اور ویڈیوز جو آپ کو ماہر کے طور پر پیش کریں۔", features: ["SEO بلاگ", "ویڈیو اسکرپٹس", "ای میل نیوز لیٹرز", "برانڈ اسٹوری ٹیلنگ"] }
+] : [
+  { icon: "📍", title: "Local SEO", desc: "Own the first page of Google for your city. We optimize your presence so customers find you before your competitors.", features: ["Google Business Profile", "Local Keyword Strategy", "Citation Building", "Review System"] },
+  { icon: "💻", title: "Web Development", desc: "Websites that don't just look great — they convert visitors into clients on autopilot, 24/7.", features: ["Custom Websites", "E-Commerce Stores", "Landing Pages", "Speed Optimization"] },
+  { icon: "📱", title: "Social Media", desc: "Build a brand people follow, trust, and buy from — across Instagram, Facebook, TikTok & LinkedIn.", features: ["Content Strategy", "Daily Posting", "Paid Social Ads", "Monthly Reports"] },
+  { icon: "✍️", title: "Content Marketing", desc: "Stories, articles, and videos that position you as the go-to expert and keep clients coming back.", features: ["SEO Blog Writing", "Video Scripts", "Email Newsletters", "Brand Storytelling"] }
+];
+---
+
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="tag" set:html={lang === "ur" ? "ہم کیا کرتے ہیں" : "What We Do"}></div>
+      <h2 set:html={lang === "ur" ? "آن لائن بڑھنے کے لیے<br>آپ کو ہر چیز کی ضرورت ہے" : "Everything You Need to<br>Grow Online"}></h2>
+      <p set:html={lang === "ur" ? "گوگل پر ملنے سے لے کر لوگوں کو پسند آنے والے برانڈ کی تعمیر تک — ہم سب کچھ سنبھال لیتے ہیں۔" : "From getting found on Google to building a brand people love — we handle it all."}></p>
+    </div>
+    <div class="services-grid">
+      {services.map((svc, i) => (
+        <div class="service-card fade-in">
+          <div class="card-icon" style="background:rgba(37,99,235,0.14);" set:html={svc.icon}></div>
+          <h3 set:html={svc.title}></h3>
+          <p set:html={svc.desc}></p>
+          <ul class="card-features">
+            {svc.features.map(f => <li set:html={f}></li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services { background: var(--deep); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .service-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .service-card:hover {
+    border-color: rgba(37,99,235,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+  }
+  .card-icon {
+    width: 52px; height: 52px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 24px;
+  }
+  .service-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; }
+  .service-card > p { color: var(--muted); font-size: 14px; line-height: 1.75; margin-bottom: 24px; }
+  .card-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .card-features li {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: #CBD5E1;
+  }
+  .card-features li::before {
+    content: '\2713'; color: var(--gold); font-weight: 700; font-size: 12px; flex-shrink: 0;
+  }
+</style>

@@ -9,17 +9,17 @@ import WhyUs from '../components/WhyUs.astro';
 import Process from '../components/Process.astro';
 import Testimonials from '../components/Testimonials.astro';
 import ContactForm from '../components/ContactForm.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE_UR, SITE_DESCRIPTION_UR } from '../consts';
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <Navbar slot="navbar" />
-  <Hero />
-  <Services />
-  <WhyUs />
-  <Process />
-  <Testimonials />
-  <ContactForm />
-  <Footer slot="footer" />
+<Layout title={SITE_TITLE_UR} description={SITE_DESCRIPTION_UR} lang="ur">
+  <Navbar slot="navbar" lang="ur" />
+  <Hero lang="ur" />
+  <Services lang="ur" />
+  <WhyUs lang="ur" />
+  <Process lang="ur" />
+  <Testimonials lang="ur" />
+  <ContactForm lang="ur" />
+  <Footer slot="footer" lang="ur" />
   <WhatsAppButton slot="whatsapp" />
 </Layout>

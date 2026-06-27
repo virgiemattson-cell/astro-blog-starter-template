@@ -1,5 +1,9 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+export const SITE_TITLE = "SkyVisible — Digital Marketing Agency";
+export const SITE_DESCRIPTION = "SkyVisible helps local businesses dominate search, social media, and beyond with SEO, web development, and content marketing.";
+export const SITE_URL = "https://skyvisible.com";
+export const WHATSAPP_NUMBER = "92XXXXXXXXXX"; // Apna WhatsApp number yahan lagayein
+export const WHATSAPP_MESSAGE = "Hi! Mujhe apki digital marketing services chahiye.";
 
-export const SITE_TITLE = "Astro Blog";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+// Urdu version
+export const SITE_TITLE_UR = "اسکائی وزیبل — ڈیجیٹل مارکیٹنگ ایجنسی";
+export const SITE_DESCRIPTION_UR = "اسکائی وزیبل مقامی کاروباروں کو SEO، ویب ڈویلپمنٹ، اور سوشل میڈیا کے ذریعے آن لائن غلبہ حاصل کرنے میں مدد کرتا ہے۔";

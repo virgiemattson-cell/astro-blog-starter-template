@@ -1,0 +1,65 @@
+---
+const { lang = "en" } = Astro.props;
+
+const steps = lang === "ur" ? [
+  { num: "01", icon: "🔍", title: "گہرا آڈٹ", desc: "ہم آپ کے کاروبار، حریفوں اور موجودہ آن لائن موجودگی کا تجزیہ کرتے ہیں۔" },
+  { num: "02", icon: "🗺️", title: "منفرد حکمت عملی", desc: "آپ کی صنعت، شہر اور اہداف کے مطابق ایک حسب ضرورت ترقی کا راستہ۔" },
+  { num: "03", icon: "⚡", title: "عملدرآمد", desc: "ہماری ٹیم مہمات شروع کرتی ہے، مواد شائع کرتی ہے اور آپ کی موجودگی بناتی ہے۔" },
+  { num: "04", icon: "📈", title: "ترقی", desc: "نتائج آنے پر، ہم ROI کو بہتر بنانے کے لیے مسلسل بہتری لاتے ہیں۔" }
+] : [
+  { num: "01", icon: "🔍", title: "Deep Audit", desc: "We analyse your business, competitors, and current online presence to find your biggest growth opportunities." },
+  { num: "02", icon: "🗺️", title: "Custom Strategy", desc: "A tailored growth roadmap specific to your industry, city, and goals." },
+  { num: "03", icon: "⚡", title: "Execute & Optimise", desc: "Our team launches campaigns, publishes content, and builds your presence while you focus on your business." },
+  { num: "04", icon: "📈", title: "Scale & Grow", desc: "As results come in, we double down on what's working and continuously improve your ROI." }
+];
+---
+
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="tag">{lang === "ur" ? "یہ کیسے کام کرتا ہے" : "How It Works"}</div>
+      <h2>{lang === "ur" ? "ہمارا 4 قدمی نظام" : "Our 4-Step Growth System"}</h2>
+      <p>{lang === "ur" ? "ایک ثابت شدہ عمل جس نے 150+ کاروباروں کو ان کی آن لائن موجودگی بڑھانے میں مدد دی۔" : "A proven process that's helped 150+ businesses scale their online presence."}</p>
+    </div>
+    <div class="process-steps">
+      {steps.map(step => (
+        <div class="step-card fade-in">
+          <div class="step-number">{step.num}</div>
+          <div class="step-icon">{step.icon}</div>
+          <h3>{step.title}</h3>
+          <p>{step.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process { background: var(--deep); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 64px;
+  }
+  .step-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .step-card:hover { transform: translateY(-4px); border-color: rgba(37,99,235,0.35); }
+  .step-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(37,99,235,0.15);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .step-icon    { font-size: 28px; margin-bottom: 16px; }
+  .step-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .step-card p  { font-size: 13px; color: var(--muted); line-height: 1.65; }
+</style>
