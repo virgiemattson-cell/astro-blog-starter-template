@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+import { WHATSAPP_NUMBER } from '../../consts';
+import { SITE_TITLE_UR } from '../../consts';
+---
+
+<Layout title={`رابطہ — ${SITE_TITLE_UR}`} description="اسکائی وزیبل سے مفت ڈیجیٹل مارکیٹنگ مشورہ حاصل کریں" lang="ur">
+  <Navbar slot="navbar" lang="ur" />
+  
+  <section class="hero" style="min-height: auto; padding: 160px 0 80px;">
+    <div class="container" style="text-align: center;">
+      <div class="tag">رابطہ کریں</div>
+      <h1 style="font-size: clamp(36px, 5vw, 56px); font-weight: 800; margin-bottom: 16px; line-height: 2.2;">
+        آئیں مل کر آپ کے<br><span class="glow">کاروبار کو بڑھائیں</span>
+      </h1>
+      <p style="color: var(--muted); max-width: 500px; margin: 0 auto 48px; font-size: 17px; line-height: 2.2;">
+        اپنی مارکیٹ پر غلبہ حاصل کرنے کے لیے تیار ہیں؟ ہمیں واٹس ایپ پر پیغام بھیجیں اور ہم منٹوں میں جواب دیں گے۔
+      </p>
+      <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener" class="btn-primary" style="font-size: 18px; padding: 16px 36px;">
+        💬 واٹس ایپ پر بات کریں
+      </a>
+      <p style="color: var(--muted); font-size: 14px; margin-top: 16px;">
+        جوابی وقت: کاروباری اوقات میں 5 منٹ سے کم
+      </p>
+    </div>
+  </section>
+  
+  <Footer slot="footer" lang="ur" />
+  <WhatsAppButton slot="whatsapp" />
+</Layout>

@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+import Services from '../../components/Services.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { SITE_TITLE_UR } from '../../consts';
+---
+
+<Layout title={`خدمات — ${SITE_TITLE_UR}`} description="اسکائی وزیبل کی ڈیجیٹل مارکیٹنگ خدمات" lang="ur">
+  <Navbar slot="navbar" lang="ur" />
+  
+  <div style="padding-top: 120px;">
+    <Services lang="ur" />
+  </div>
+  
+  <ContactForm lang="ur" />
+  <Footer slot="footer" lang="ur" />
+  <WhatsAppButton slot="whatsapp" />
+</Layout>
