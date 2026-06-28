@@ -8,7 +8,7 @@ import ContactForm from '../components/ContactForm.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<Layout title={`About — ${SITE_TITLE}`} description="Learn more about SkyVisible digital marketing agency" path="/about">
+<Layout title={`About — ${SITE_TITLE}`} description="Learn more about SkyVisible digital marketing agency — Pakistan's premier digital growth agency" path="/about">
   <Navbar slot="navbar" />
   
   <section class="hero" style="min-height: auto; padding: 160px 0 80px;">
@@ -24,9 +24,232 @@ import { SITE_TITLE } from '../consts';
       </p>
     </div>
   </section>
-  
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="tag">By The Numbers</div>
+        <h2>150+ Businesses Trust Us</h2>
+        <p>Over the last 3 years, we've helped businesses across Pakistan dominate their digital space.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card fade-in">
+          <div class="stat-num">150+</div>
+          <div class="stat-lbl">Clients Served</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-num">280%</div>
+          <div class="stat-lbl">Avg. Traffic Boost</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-num">5★</div>
+          <div class="stat-lbl">Average Rating</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-num">48h</div>
+          <div class="stat-lbl">Onboarding Time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="section" style="background: var(--deep);">
+    <div class="container">
+      <div class="mission-grid fade-in">
+        <div class="mission-content">
+          <div class="tag">Our Approach</div>
+          <h2 style="font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 20px;">
+            We Make Digital Marketing <span class="glow">Simple & Effective</span>
+          </h2>
+          <p style="color: var(--muted); line-height: 1.8; margin-bottom: 16px;">
+            We believe digital marketing shouldn't be complicated. We cut through the jargon 
+            and focus on what actually drives results for your business — more customers, 
+            more revenue, and sustainable growth.
+          </p>
+          <p style="color: var(--muted); line-height: 1.8;">
+            Whether you run a dental clinic in Karachi, a restaurant in Lahore, or an 
+            e-commerce store in Islamabad — our process is the same: deep audit, custom 
+            strategy, execution, and continuous optimization.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER CASE STUDY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="tag">Case Study</div>
+        <h2>Real Results: Dental Clinic Transformation</h2>
+        <p>See how we transformed a struggling Karachi dental clinic into a market leader in just 90 days.</p>
+      </div>
+
+      <div class="ba-wrapper fade-in">
+        <div class="ba-column ba-before">
+          <div class="ba-mockup ba-mockup-before"><div class="mockup-bar"><span class="mockup-dot red"></span><span class="mockup-dot yellow"></span><span class="mockup-dot green"></span></div><div class="mockup-body"><div class="mockup-line" style="width:70%"></div><div class="mockup-line" style="width:50%"></div><div class="mockup-img-placeholder"><span>Old Website</span></div><div class="mockup-line" style="width:60%"></div><div class="mockup-line" style="width:40%"></div></div></div><div class="ba-badge">BEFORE</div>
+          <div class="ba-icon">😟</div>
+          <h3>The Struggle</h3>
+          <ul class="ba-list">
+            <li><span class="ba-x">✕</span> Old, slow website — no conversions</li>
+            <li><span class="ba-x">✕</span> Invisible on Google — page 5+ rankings</li>
+            <li><span class="ba-x">✕</span> Zero social media presence</li>
+            <li><span class="ba-x">✕</span> Losing patients to competitors</li>
+            <li><span class="ba-x">✕</span> Declining monthly revenue</li>
+          </ul>
+        </div>
+        <div class="ba-vs">
+          <span class="ba-vs-text">VS</span>
+        </div>
+        <div class="ba-column ba-after">
+          <div class="ba-mockup ba-mockup-after"><div class="mockup-bar"><span class="mockup-dot red"></span><span class="mockup-dot yellow"></span><span class="mockup-dot green"></span></div><div class="mockup-body"><div class="mockup-line glow" style="width:85%"></div><div class="mockup-line glow" style="width:65%"></div><div class="mockup-img-placeholder mockup-img-modern"><span>New Website</span></div><div class="mockup-line glow" style="width:75%"></div><div class="mockup-line glow" style="width:55%"></div></div></div><div class="ba-badge ba-badge-after">AFTER</div>
+          <div class="ba-icon">🚀</div>
+          <h3>The Victory</h3>
+          <ul class="ba-list">
+            <li><span class="ba-check">✓</span> Custom website — converts at 5x</li>
+            <li><span class="ba-check">✓</span> #1 on Google for key terms</li>
+            <li><span class="ba-check">✓</span> 8,000+ social followers</li>
+            <li><span class="ba-check">✓</span> Dominating local market</li>
+            <li><span class="ba-check">✓</span> Revenue up 240%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case-card fade-in">
+        <div class="case-results">
+          <div class="result-item">
+            <span class="result-num">3x</span>
+            <span class="result-lbl">Website Traffic</span>
+          </div>
+          <div class="result-item">
+            <span class="result-num">+240%</span>
+            <span class="result-lbl">Revenue Growth</span>
+          </div>
+          <div class="result-item">
+            <span class="result-num">#1</span>
+            <span class="result-lbl">Google Ranking</span>
+          </div>
+          <div class="result-item">
+            <span class="result-num">8K</span>
+            <span class="result-lbl">Social Followers</span>
+          </div>
+        </div>
+        <div class="case-story">
+          <div class="story-part">
+            <span class="story-label">The Problem</span>
+            <p>A well-known dental clinic in Karachi was struggling to attract new patients due to poor online visibility. Their outdated website wasn't converting visitors, and they were virtually invisible on Google search. Meanwhile, competitors were capturing their potential patients.</p>
+          </div>
+          <div class="story-part">
+            <span class="story-label">Our Solution</span>
+            <p>We built a modern, conversion-optimized website, fully optimized their Google Business Profile, implemented a comprehensive local SEO strategy targeting Karachi-specific keywords, and built their social media presence from scratch with daily content and targeted ads.</p>
+          </div>
+          <div class="story-part">
+            <span class="story-label">The Result</span>
+            <p>Within 90 days, website traffic tripled, they ranked #1 for their main keywords on Google, social media grew to 8,000 engaged followers, and monthly revenue increased by 240%. They now dominate their local market.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <WhyUs />
   <ContactForm />
   <Footer slot="footer" />
   <WhatsAppButton slot="whatsapp" />
 </Layout>
+
+<style>
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 16px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .stat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37,99,235,0.4);
+  }
+  .stat-num {
+    font-size: 42px;
+    font-weight: 800;
+    background: linear-gradient(120deg, #60A5FA, #818CF8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .stat-lbl {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .mission-grid {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .ba-wrapper {
+    display: fl
+  .ba-mockup {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+  }
+  .ba-mockup-before {
+    background: rgba(220,38,38,0.08);
+  }
+  .ba-mockup-after {
+    background: rgba(37,211,102,0.08);
+  }
+  .mockup-bar {
+    display: flex;
+    gap: 6px;
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.3);
+  }
+  .mockup-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+  .mockup-dot.red    { background: #EF4444; }
+  .mockup-dot.yellow { background: #F59E0B; }
+  .mockup-dot.green  { background: #34D399; }
+  .mockup-body {
+    padding: 16px 14px;
+  }
+  .mockup-line {
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 10px;
+  }
+  .mockup-line.glow {
+    background: linear-gradient(90deg, var(--sky), var(--dawn));
+  }
+  .mockup-img-placeholder {
+    height: 60px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    border: 1px dashed rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .mockup-img-modern {
+    background: rgba(37,99,235,0.1);
+    border-color: rgba(37,99,235,0.3);
+    border-style: solid;
+  }
