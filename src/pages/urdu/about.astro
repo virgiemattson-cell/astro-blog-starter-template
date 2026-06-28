@@ -8,7 +8,7 @@ import ContactForm from '../../components/ContactForm.astro';
 import { SITE_TITLE_UR } from '../../consts';
 ---
 
-<Layout title={`ہمارے بارے میں — ${SITE_TITLE_UR}`} description="اسکائی وزیبل ڈیجیٹل مارکیٹنگ ایجنسی کے بارے میں جانیں" lang="ur">
+<Layout title={`ہمارے بارے میں — ${SITE_TITLE_UR}`} description="اسکائی وزیبل ڈیجیٹل مارکیٹنگ ایجنسی — پاکستان میں مقامی کاروباروں کو آن لائن غلبہ حاصل کرنے میں مدد کرتے ہیں" lang="ur" path="/about">
   <Navbar slot="navbar" lang="ur" />
   
   <section class="hero" style="min-height: auto; padding: 160px 0 80px;">
@@ -17,16 +17,193 @@ import { SITE_TITLE_UR } from '../../consts';
       <h1 style="font-size: clamp(36px, 5vw, 56px); font-weight: 800; margin-bottom: 16px; line-height: 2.2;">
         پاکستان کی اولین<br><span class="glow">ڈیجیٹل گروتھ ایجنسی</span>
       </h1>
-      <p style="color: var(--muted); max-width: 600px; margin: 0 auto; font-size: 17px; line-height: 2.4;">
+      <p style="color: var(--muted); max-width: 650px; margin: 0 auto; font-size: 17px; line-height: 2.4;">
         اسکائی وزیبل ایک سادہ مشن کے ساتھ قائم کیا گیا تھا: پاکستان میں مقامی کاروباروں کو ڈیجیٹل 
         اسپیس میں غلبہ حاصل کرنے میں مدد کرنا۔ ہم عالمی بہترین طریقوں کو مقامی مارکیٹ کی مہارت کے 
         ساتھ جوڑتے ہیں تاکہ حقیقی، قابل پیمائش نتائج فراہم کر سکیں۔
       </p>
     </div>
   </section>
-  
+
+  <!-- ─── اعداد و شمار ────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="tag">تاثرات</div>
+        <h2>150+ کاروباروں نے ہم پر بھروسہ کیا</h2>
+        <p>گزشتہ 3 سالوں میں، ہم نے پاکستان بھر کے کاروباروں کو ڈیجیٹل اسپیس میں غلبہ حاصل کرنے میں مدد دی ہے۔</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card fade-in">
+          <div class="stat-num">150+</div>
+          <div class="stat-lbl">کلائنٹس</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-num">280%</div>
+          <div class="stat-lbl">اوسط ٹریفک اضافہ</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-num">5★</div>
+          <div class="stat-lbl">اوسط ریٹنگ</div>
+        </div>
+        <div class="stat-card fade-in">
+          <div class="stat-num">48h</div>
+          <div class="stat-lbl">آن بورڈنگ وقت</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ہمارا مشن ──────────────────────────────── -->
+  <section class="section" style="background: var(--deep);">
+    <div class="container">
+      <div class="mission-grid fade-in">
+        <div class="mission-content">
+          <div class="tag">ہمارا نقطہ نظر</div>
+          <h2 style="font-size: clamp(28px, 3.5vw, 42px); line-height: 2; margin-bottom: 20px;">
+            ہم ڈیجیٹل مارکیٹنگ کو <span class="glow">آسان اور مؤثر</span> بناتے ہیں
+          </h2>
+          <p style="color: var(--muted); line-height: 2.4; margin-bottom: 16px;">
+            ہمارا خیال ہے کہ ڈیجیٹل مارکیٹنگ پیچیدہ نہیں ہونی چاہیے۔ ہم پیچیدہ اصطلاحات کو ختم کرتے ہیں 
+            اور صرف ان چیزوں پر توجہ دیتے ہیں جو واقعی آپ کے کاروبار کے لیے نتائج لائیں۔
+          </p>
+          <p style="color: var(--muted); line-height: 2.4;">
+            چاہے آپ کراچی میں ایک ڈینٹل کلینک چلا رہے ہوں، لاہور میں ایک ریستوراں، یا اسلام آباد میں 
+            ایک ای کامرس اسٹور — ہمارا طریقہ کار ایک جیسا ہے: گہرا آڈٹ، حسب ضرورت حکمت عملی، 
+            عملدرآمد، اور مسلسل بہتری۔
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── کامیابی کی کہانی ─────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="tag">کیس اسٹڈی</div>
+        <h2>حقیقی کامیابی: ڈینٹل کلینک کی ڈیجیٹل تبدیلی</h2>
+        <p>دیکھیں کہ ہم نے کراچی کے ایک ڈینٹل کلینک کو صرف 3 مہینوں میں کیسے ٹرانسفارم کیا۔</p>
+      </div>
+      <div class="case-card fade-in">
+        <div class="case-results">
+          <div class="result-item">
+            <span class="result-num">3x</span>
+            <span class="result-lbl">ویب سائٹ ٹریفک</span>
+          </div>
+          <div class="result-item">
+            <span class="result-num">+240%</span>
+            <span class="result-lbl">ریونیو میں اضافہ</span>
+          </div>
+          <div class="result-item">
+            <span class="result-num">#1</span>
+            <span class="result-lbl">گوگل رینکنگ</span>
+          </div>
+          <div class="result-item">
+            <span class="result-num">8K</span>
+            <span class="result-lbl">سوشل فالوورز</span>
+          </div>
+        </div>
+        <div style="margin-top: 24px; line-height: 2.4; color: var(--muted);">
+          <p style="margin-bottom: 16px;">
+            <strong>مسئلہ:</strong> کراچی کا ایک مشہور ڈینٹل کلینک اپنی آن لائن موجودگی کی کمی کی وجہ سے 
+            نئے مریض حاصل کرنے میں مشکلات کا سامنا کر رہا تھا۔ ان کی ویب سائٹ پرانے ڈیزائن کی تھی اور 
+            وہ گوگل پر تلاش کرنے پر نظر نہیں آتے تھے۔
+          </p>
+          <p style="margin-bottom: 16px;">
+            <strong>حل:</strong> ہم نے ان کے لیے ایک نئی ویب سائٹ بنائی، Google Business Profile کو 
+            مکمل طور پر آپٹیمائز کیا، اور ایک جامع لوکل SEO حکمت عملی لاگو کی۔ اس کے ساتھ ساتھ، 
+            ہم نے سوشل میڈیا پر بھی ان کی موجودگی بنائی۔
+          </p>
+          <p>
+            <strong>نتیجہ:</strong> صرف 90 دنوں میں، ان کی ویب سائٹ ٹریفک تین گنا بڑھ گئی، وہ اپنے 
+            اہم کلیدی الفاظ میں گوگل پر نمبر 1 پوزیشن پر آ گئے، اور ماہانہ ریونیو میں 240% اضافہ ہوا۔
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <WhyUs lang="ur" />
   <ContactForm lang="ur" />
   <Footer slot="footer" lang="ur" />
   <WhatsAppButton slot="whatsapp" />
 </Layout>
+
+<style>
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 16px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .stat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37,99,235,0.4);
+  }
+  .stat-num {
+    font-size: 42px;
+    font-weight: 800;
+    background: linear-gradient(120deg, #60A5FA, #818CF8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .stat-lbl {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .mission-grid {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .case-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .case-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .result-item {
+    background: rgba(37,99,235,0.08);
+    border: 1px solid rgba(37,99,235,0.2);
+    border-radius: 12px;
+    padding: 20px 12px;
+    text-align: center;
+  }
+  .result-num {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .result-lbl {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .case-card p strong { color: var(--white); }
+
+  @media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-results { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

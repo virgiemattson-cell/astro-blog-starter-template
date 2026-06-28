@@ -7,27 +7,100 @@ import { WHATSAPP_NUMBER } from '../../consts';
 import { SITE_TITLE_UR } from '../../consts';
 ---
 
-<Layout title={`رابطہ — ${SITE_TITLE_UR}`} description="اسکائی وزیبل سے مفت ڈیجیٹل مارکیٹنگ مشورہ حاصل کریں" lang="ur">
+<Layout title={`رابطہ — ${SITE_TITLE_UR}`} description="اسکائی وزیبل سے مفت ڈیجیٹل مارکیٹنگ مشورہ حاصل کریں — 30 منٹ کا مفت آڈٹ" lang="ur" path="/contact">
   <Navbar slot="navbar" lang="ur" />
   
   <section class="hero" style="min-height: auto; padding: 160px 0 80px;">
     <div class="container" style="text-align: center;">
-      <div class="tag">رابطہ کریں</div>
+      <div class="tag">رابطہ کریں — مفت مشورہ</div>
       <h1 style="font-size: clamp(36px, 5vw, 56px); font-weight: 800; margin-bottom: 16px; line-height: 2.2;">
         آئیں مل کر آپ کے<br><span class="glow">کاروبار کو بڑھائیں</span>
       </h1>
-      <p style="color: var(--muted); max-width: 500px; margin: 0 auto 48px; font-size: 17px; line-height: 2.2;">
-        اپنی مارکیٹ پر غلبہ حاصل کرنے کے لیے تیار ہیں؟ ہمیں واٹس ایپ پر پیغام بھیجیں اور ہم منٹوں میں جواب دیں گے۔
+      <p style="color: var(--muted); max-width: 550px; margin: 0 auto 16px; font-size: 17px; line-height: 2.4;">
+        اپنی مارکیٹ پر غلبہ حاصل کرنے کے لیے تیار ہیں؟ ہمیں واٹس ایپ پر پیغام بھیجیں۔ 
+        ہم آپ کی موجودہ ڈیجیٹل موجودگی کا مفت 30 منٹ کا آڈٹ کریں گے — بغیر کسی ذمہ داری کے۔
       </p>
-      <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener" class="btn-primary" style="font-size: 18px; padding: 16px 36px;">
-        💬 واٹس ایپ پر بات کریں
-      </a>
-      <p style="color: var(--muted); font-size: 14px; margin-top: 16px;">
-        جوابی وقت: کاروباری اوقات میں 5 منٹ سے کم
+      <p style="color: var(--muted); max-width: 500px; margin: 0 auto 48px; font-size: 15px; line-height: 2.2;">
+        ہم آپ کو دکھائیں گے کہ آپ کہاں گاہک کھو رہے ہیں اور اسے کیسے ٹھیک کریں۔ محدود نشستیں دستیاب ہیں۔
+      </p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 40px;">
+        <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener" class="btn-primary" style="font-size: 18px; padding: 16px 36px;">
+          💬 واٹس ایپ پر بات کریں
+        </a>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! Mujhe apni website ka free SEO audit chahiye.")}`} target="_blank" rel="noopener" class="btn-secondary" style="font-size: 16px; padding: 16px 32px;">
+          🚀 مفت SEO آڈٹ حاصل کریں
+        </a>
+      </div>
+      
+      <p style="color: var(--muted); font-size: 14px; line-height: 2;">
+        جوابی وقت: کاروباری اوقات میں 5 منٹ سے کم<br>
+        یا ہمیں ای میل کریں: <a href="mailto:hello@skyvisible.com" style="color: var(--light-sky);">hello@skyvisible.com</a>
       </p>
     </div>
   </section>
-  
+
+  <!-- ─── مفت آڈٹ کے فوائد ────────────────────────── -->
+  <section class="section" style="background: var(--deep); padding-top: 64px; padding-bottom: 64px;">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="tag">مفت مشورے میں کیا ملے گا؟</div>
+        <h2>30 منٹ کا مفت ڈیجیٹل آڈٹ</h2>
+      </div>
+      <div class="audit-grid">
+        <div class="audit-item fade-in">
+          <div class="audit-icon">🔍</div>
+          <h3>ویب سائٹ تجزیہ</h3>
+          <p>آپ کی ویب سائٹ کی کارکردگی، رفتار اور SEO مسائل کا مکمل جائزہ</p>
+        </div>
+        <div class="audit-item fade-in">
+          <div class="audit-icon">🏆</div>
+          <h3>مسابقتی تجزیہ</h3>
+          <p>آپ کے حریفوں کی ڈیجیٹل حکمت عملی کا تجزیہ اور آپ کے مواقع</p>
+        </div>
+        <div class="audit-item fade-in">
+          <div class="audit-icon">📊</div>
+          <h3>گروتھ روڈ میپ</h3>
+          <p>آپ کے کاروبار کے لیے ایک واضح، عملی ڈیجیٹل گروتھ پلان</p>
+        </div>
+        <div class="audit-item fade-in">
+          <div class="audit-icon">💰</div>
+          <h3>ROI تخمینہ</h3>
+          <p>ہم آپ کو بتائیں گے کہ آپ کتنا کما سکتے ہیں اور کب</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <Footer slot="footer" lang="ur" />
   <WhatsAppButton slot="whatsapp" />
 </Layout>
+
+<style>
+  .audit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .audit-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .audit-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37,99,235,0.4);
+  }
+  .audit-icon { font-size: 32px; margin-bottom: 16px; }
+  .audit-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+  .audit-item p { font-size: 13px; color: var(--muted); line-height: 2; }
+  @media (max-width: 768px) {
+    .audit-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .audit-grid { grid-template-columns: 1fr; }
+  }
+</style>
