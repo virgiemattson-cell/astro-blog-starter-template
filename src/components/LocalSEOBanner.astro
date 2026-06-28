@@ -188,10 +188,11 @@ const c = lang === "ur" ? {
             : "Our team of professional female developers and digital experts handles everything from web design and development to Local SEO, social media management, and ranking optimization. You can hire our experts online for your specific needs."}
         </p>
         <div class="team-services">
-          {[ 
-            lang === "ur" ? ["ویب سائٹ ڈیولپمنٹ", "لوکل SEO", "سوشل میڈیا", "گرافک ڈیزائن", "ای کامرس", "برانڈنگ"]
+          {(
+            lang === "ur"
+            ? ["ویب سائٹ ڈیولپمنٹ", "لوکل SEO", "سوشل میڈیا", "گرافک ڈیزائن", "ای کامرس", "برانڈنگ"]
             : ["Website Development", "Local SEO", "Social Media", "Graphic Design", "E-commerce", "Branding"]
-          ].map(s => <span class="tm-service-tag">{s}</span>)
+          ).map(s => <span class="tm-service-tag">{s}</span>)}
           }
         </div>
         <a href="/contact" class="btn-primary" style="margin-top: 24px; display: inline-flex;">
