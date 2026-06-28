@@ -34,7 +34,7 @@ const content = lang === "ur" ? {
   <div class="container">
     <div class="hero-content">
       <div class="tag" set:html={content.tag}></div>
-      <h1 set:html={content.h1}></h1>
+      <h2 set:html={content.h1}></h2>
       <p set:html={content.p}></p>
       <div class="hero-ctas">
         <a href="/contact" class="btn-primary" set:html={content.btn1}></a>
@@ -80,7 +80,7 @@ const content = lang === "ur" ? {
     50%       { opacity: 0.08; transform: scale(0.6); }
   }
   .hero-content { position: relative; z-index: 2; max-width: 760px; }
-  .hero h1 {
+  .hero h2 {
     font-size: clamp(42px, 6vw, 76px);
     font-weight: 800;
     letter-spacing: -0.03em;
