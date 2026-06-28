@@ -10,10 +10,12 @@ import Process from '../components/Process.astro';
 import Testimonials from '../components/Testimonials.astro';
 import ContactForm from '../components/ContactForm.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import LocalSEOBanner from '../components/LocalSEOBanner.astro';
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION} path="/">
   <Navbar slot="navbar" />
+  <LocalSEOBanner />
   <Hero />
   <Services />
   <WhyUs />
