@@ -1,10 +1,152 @@
 ---
 const { lang = "en" } = Astro.props;
-const site = lang === "ur" ? "urdu/" : "";
-const btn1 = lang === "ur" ? "🚀 مفت مشورہ" : "🚀 Get Free Audit";
-const btn2 = lang === "ur" ? "خدمات دیکھیں" : "See Services";
 
-const tag = lang === "ur"
-  ? "مقامی SEO - پاکستان کی #1 ایجنسی"
-  : "Local SEO - Pakistan’s #1 Agency";
+const c = lang === "ur" ? {
+  tag: "مقامی SEO - پاکستان کی #1 ایجنسی",
+  h1: 'لوکل SEO میں <span class="glow">#1 بنیں</span>',
+  sub: "Google Search اور Google Maps پر اپنے کاروبار کو نمایاں بنائیں",
+  cta: "🚀 مفت مشورہ حاصل کریں",
+  cta2: "خدمات دیکھیں →",
+  benefits: [
+    { icon: "📞", text: "زیادہ کالز حاصل کریں" },
+    { icon: "📍", text: "Google Maps پر بہتر رینکنگ" },
+    { icon: "⭐", text: "اعتماد میں اضافہ" },
+    { icon: "📈", text: "زیادہ گاہک تک پہنچیں" }
+  ]
+} : {
+  tag: "Local SEO - Pakistan’s #1 Agency",
+  h1: 'Become <span class="glow">#1 in Local SEO</span>',
+  sub: "Dominate Google Search and Google Maps with Pakistan’s premier Local SEO agency.",
+  cta: "🚀 Get Free Audit",
+  cta2: "See Services →",
+  benefits: [
+    { icon: "📞", text: "Get More Calls" },
+    { icon: "📍", text: "Better Google Rank" },
+    { icon: "⭐", text: "Build Credibility" },
+    { icon: "📈", text: "Reach Customers" }
+  ]
+};
 ---
+
+<section class="seo-banner">  <div class="banner-bg"></div>
+  <div class="container">
+    <div class="banner-grid">
+      <div class="banner-left">
+        <div class="tag">{c.tag}</div>
+        <h1 set:html={c.h1}></h1>
+        <p>{c.sub}</p>
+        <div class="banner-ctas">
+          <a href="/contact" class="btn-primary">{c.cta}</a>
+          <a href="/services" class="btn-secondary">{c.cta2}</a>
+        </div>
+        <div class="benefits-grid">
+          {c.benefits.map(b => (
+            <div class="benefit-chip">
+              <span class="benefit-icon">{b.icon}</span>
+              <span>{b.text}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="banner-right">
+        <div class="mockup-card">
+          <div class="mockup-header">
+            <span class="mockup-dot red"></span>
+            <span class="mockup-dot yellow"></span>
+            <span class="mockup-dot green"></span>
+            <span class="mockup-url">Google Business Profile</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-profile">
+              <div class="mockup-avatar"></div>
+              <div>
+                <div class="mockup-line" style="width:70%"></div>
+                <div class="mockup-line thin" style="width:45%"></div>
+              </div>
+            </div>
+            <div class="mockup-stars">{lang === "ur" ? "128+ آرائے" : "128+ Reviews"}</div>
+            <div class="mockup-detail">
+              <div class="mockup-line" style="width:60%"></div>
+              <div class="mockup-line" style="width:80%"></div>
+            </div>
+            <div class="mockup-badge">✅ {lang === "ur" ? "نقشے پر نمایاں" : "Featured on Maps"}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .seo-banner {
+    padding: 150px 0 80px;
+    min-height: 60vh;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .banner-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 30% 0%, rgba(37,99,235,0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 50% at 80% 100%, rgba(129,140,248,0.12) 0%, transparent 60%);
+  }
+  .banner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px; align-items: center;
+    position: relative; z-index: 2;
+  }
+  .banner-left h1 {
+    font-size: clamp(34px, 4.5vw, 60px);
+    font-weight: 800; letter-spacing: -0.03em;
+    margin-bottom: 16px; line-height: 1.1;
+  }
+  .banner-left > p {
+    font-size: 16px; color: var(--muted);
+    line-height: 1.7; margin-bottom: 28px;
+    max-width: 460px;
+  }
+  .banner-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .benefit-chip {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; padding: 6px 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px; color: #CBD5E1;
+  }
+  .benefit-icon { font-size: 14px; }
+  .banner-right { display: flex; justify-content: center; }
+  .mockup-card {
+    width: 100%; max-width: 380px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  }
+  .mockup-header {
+    display: flex; align-items: center; gap: 6px;
+    padding: 10px 14px; background: rgba(0,0,0,0.25);
+  }
+  .mockup-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .mockup-dot.red { background: #EF4444; }
+  .mockup-dot.yellow { background: #F59E0B; }
+  .mockup-dot.green { background: #34D399; }
+  .mockup-url { font-size: 10px; color: var(--muted); flex: 1; text-align: center; }
+  .mockup-body { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .mockup-profile { display: flex; align-items: center; gap: 10px; }
+  .mockup-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--sky); flex-shrink: 0; }
+  .mockup-line { height: 7px; border-radius: 3px; background: rgba(255,255,255,0.1); margin-bottom: 5px; }
+  .mockup-line.thin { height: 5px; }
+  .mockup-stars { color: var(--gold); font-size: 13px; padding: 8px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .mockup-detail { display: flex; flex-direction: column; gap: 5px; }
+  .mockup-badge { font-size: 12px; color: #34D399; display: flex; align-items: center; gap: 6px; }
+  @media (max-width: 900px) {
+    .banner-grid { grid-template-columns: 1fr; }
+    .banner-right { display: none; }
+    .seo-banner { min-height: auto; padding: 120px 0 60px; }
+  }
+</style>
